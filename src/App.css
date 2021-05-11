@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+#divTelaConfig{
+    margin-top: 10%;
+    margin-left: 30%;
+    
 }
+input{
+    width: 15%;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#inputNum1{
+    margin-left: 1%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+label{
+    font-size: 140%;
 }
-
-.App-link {
-  color: #61dafb;
+.btnClass{
+    font-size: 100%;
+    margin-left: 19%;
+    cursor: pointer;
+    
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#check{
+    margin-left: 10.5%;
+    width: 3%;
+}
+#divTelaSorteio{
+    margin-top: 5%;
+    text-align: center;
+}
+#btnVoltar{
+   
+    font-size: 120%;
+    
+    cursor: pointer;
+    
+}
+#labelVoltar{
+    margin-left: 10%;
+   
+}
+#btnGerar{
+    font-size: 150%;
+    cursor: pointer;
+    margin-left: 40%;
+}
+hr{
+    width: 50%;
+    margin-right: 50%;
 }
