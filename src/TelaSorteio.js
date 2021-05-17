@@ -26,7 +26,7 @@ let vetorOrganizado = [];
 let vetorAleatorio = [];
 let numero;
 var desabilitarBotao = false;
-var teste = 0;
+
 
 function Sorteio() {
   let {numero1,numero2,repeticao}= useParams(); 
@@ -60,6 +60,7 @@ function Sorteio() {
       }
     }
     itens.push({id:num.length, value: numero});
+    
     setNum(itens);
   }
 
@@ -74,19 +75,27 @@ function Sorteio() {
     return (
       <div>
         
-      <h1>{props.value}</h1>
+      <h3>{props.value}</h3>
       </div>
     );
   };
 
   function SetarValor(){
     console.log(num);
+    console.log(vetorAleatorio);
+   
     return(
       <div>
+        <h1>{numero}</h1>
       {num.map(({id, value}) => (
+        
+        numero == value && repeticao === "true" ? null:
         <ListItem
         key={id}
         value={value}
+        
+        
+        
       />
       ))}
       </div>
