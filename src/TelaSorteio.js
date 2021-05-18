@@ -18,8 +18,9 @@ const OrganizarNumeros = (min, max) =>{
     min = max;
     max = aux;
   }
+  vetor = [min, max]
   return(
-    vetor = [min, max]
+    vetor
   );
 };
 let vetorOrganizado = [];
@@ -89,7 +90,7 @@ function Sorteio() {
         <h1>{numero}</h1>
       {num.map(({id, value}) => (
         
-        numero == value && repeticao === "true" ? null:
+        numero === value && repeticao === "true" ? null:
         <ListItem
         key={id}
         value={value}
