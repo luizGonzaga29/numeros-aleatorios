@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div id="divTelaConfig">
-      <h1>Teste!!!</h1>
+      
       <h1>Gerador de Números</h1>
       <hr/>
       <label>Número um:</label>
