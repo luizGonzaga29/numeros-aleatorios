@@ -27,14 +27,15 @@ let vetorOrganizado = [];
 let vetorAleatorio = [];
 let numero;
 var desabilitarBotao = false;
-
+var qtdNumeros = 0;
 
 function Sorteio() {
   let {numero1,numero2,repeticao}= useParams(); 
   const [num, setNum] = useState([]);
   const itens = Array.from(num);
   vetorOrganizado = OrganizarNumeros(numero1, numero2);
-  
+ 
+
   function exibirResultado(){
     if(numero === undefined ){
       numero = GetNumeroAleatorio(vetorOrganizado[0], vetorOrganizado[1]);
@@ -47,7 +48,7 @@ function Sorteio() {
        
         if(qtdVetor === vetorAleatorio.length){
           desabilitarBotao = true;
-          itens.pop();
+          //itens.pop();
           alert("Não ha mais números a serem gerados");
         }else{
           while(vetorAleatorio.includes(numero)){
@@ -60,9 +61,14 @@ function Sorteio() {
         vetorAleatorio.push(numero);
       }
     }
-    itens.push({id:num.length, value: numero});
-    
+    qtdNumeros++;
+    if(qtdNumeros < 6){
+      itens.unshift({id:num.length, value: numero});
+    }
+    console.log( itens);
     setNum(itens);
+    
+    console.log("qtdNumeros : " + qtdNumeros)
   }
 
   function zerarValores(){
@@ -82,8 +88,8 @@ function Sorteio() {
   };
 
   function SetarValor(){
-    console.log(num);
-    console.log(vetorAleatorio);
+    
+    console.log("VetorAleatório : " + vetorAleatorio);
    
     return(
       <div>
@@ -94,11 +100,10 @@ function Sorteio() {
         <ListItem
         key={id}
         value={value}
-        
-        
-        
+      
       />
       ))}
+      
       </div>
        
     );
