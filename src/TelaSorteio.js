@@ -3,7 +3,6 @@ import {Link, useParams} from "react-router-dom";
 import "./App.css";
 import { Button } from 'semantic-ui-react';
 
-
 const GetNumeroAleatorio = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -27,7 +26,6 @@ let vetorOrganizado = [];
 let vetorAleatorio = [];
 let numero;
 var desabilitarBotao = false;
-var qtdNumeros = 0;
 
 function Sorteio() {
   let {numero1,numero2,repeticao}= useParams(); 
@@ -35,7 +33,6 @@ function Sorteio() {
   const itens = Array.from(num);
   vetorOrganizado = OrganizarNumeros(numero1, numero2);
  
-
   function exibirResultado(){
     if(numero === undefined ){
       numero = GetNumeroAleatorio(vetorOrganizado[0], vetorOrganizado[1]);
@@ -61,14 +58,9 @@ function Sorteio() {
         vetorAleatorio.push(numero);
       }
     }
-    qtdNumeros++;
-    if(qtdNumeros < 6){
-      itens.unshift({id:num.length, value: numero});
-    }
+    itens.unshift({id:num.length, value: numero});
     console.log( itens);
     setNum(itens);
-    
-    console.log("qtdNumeros : " + qtdNumeros)
   }
 
   function zerarValores(){
@@ -88,24 +80,18 @@ function Sorteio() {
   };
 
   function SetarValor(){
-    
     console.log("VetorAleatório : " + vetorAleatorio);
-   
     return(
       <div>
         <h1>{numero}</h1>
       {num.map(({id, value}) => (
-        
         numero === value && repeticao === "true" ? null:
         <ListItem
         key={id}
         value={value}
-      
-      />
+        />
       ))}
-      
       </div>
-       
     );
   }
     return (
